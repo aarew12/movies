@@ -1,5 +1,4 @@
 :root {
-    --main-bg-color: #00B7EB;
     --main-font-color: #242222;
     --bg-color: rgba(100,100,100, 0.5);
 }
@@ -50,6 +49,13 @@ body {
     grid-area: 2/1/3/-1;
     align-self: center;
     text-align: center;
+}
+
+#enterCity {
+    border: 2px solid var(--bg-color);
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 1em;
 }
 
 .weatherinfo {
@@ -114,7 +120,6 @@ body {
         grid-area: 2/2/3/-1;
         border-bottom: 2px solid white;
     }
-
 
     .movie {
         grid-area: 3/2/-1/-1;
