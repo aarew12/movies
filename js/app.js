@@ -1,6 +1,6 @@
 let units = 'metric';   
 const apiId = '8d1e9284c9373751f4e24ac5eb9993ce';
-const cityInput = document.getElementById('cityInput');
+const cityInput = document.forms['city'];
 
 cityInput.addEventListener('submit', getWeatherByCityName);
 
@@ -19,9 +19,8 @@ function getWeatherByCityName(e) {
         .then(resp => {
             // console.log(resp);  
             document.querySelector('.weatherinfo').innerHTML = 
-            `<h3>${resp.name}</h3>
+            `<h3>${resp.name}, ${resp.main.temp.toFixed()} °C</h3>
             <ul>
-                <li>temperatura: ${resp.main.temp.toFixed()} °C</li>
                 <li>ciśnienie: ${resp.main.pressure} hPa</li>
                 <li>wilgotność: ${resp.main.humidity} %</li>
                 <li>prędkość wiatru: ${resp.wind.speed} km/h</li>
@@ -30,7 +29,7 @@ function getWeatherByCityName(e) {
         })
         .catch(error => {
             if(error.status === 404) {
-                alert(`nie znaleziono miasta: ${miasto}`);
+                alert(`Błąd! Nie znaleziono miasta: ${miasto}`);
             }
         })
 }
