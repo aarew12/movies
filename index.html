@@ -26,16 +26,28 @@
                 </div>
                 <div class='city'>
                     <form name='city'>
+                        <label for='enterCity'>Wpisz miasto</label>
+                        <br>
                         <input type='text' id='enterCity' placeholder='Wpisz miasto' maxlength="25">
+                        <br>
+                        <label for='selectMood'>Wybierz humor</label>
+                        <br>
+                        <select id='selectMood'>
+                            <option value='wspanialy'>Wspaniały!</option>
+                            <option value='znudzony'>Znudzony :/</option>
+                            <option value='smutny'>Smutny :(</option>
+                            <option value='zabawny'>Zabawny :D</option>
+                            <option value='romantyczny'>Romantyczny ;*</option>
+                        </select>
                     </form>
                 </div>
             </div>
 
 
             <div class='movie'>
-                <div class='mood'>Enter your mood</div>
+                <div class='title'>Title</div>
                 <div class='movieimg'></div>
-                <div class='description'>Title & Description
+                <div class='description'>Description
                     <p> Lorem Ipsum is simply dummy text of the 
                         printing and typesetting industry. Lorem Ipsum has 
                         been the industry's standard dummy text ever since 
@@ -50,7 +62,9 @@
                         Ipsum.
                     </p>
                 </div>
-                <div class='rating'>Movie rating</div>
+                <div class='buttons'>
+                    <button class='btnNext'> Następny </button>
+                </div>
             </div>
         </div> 
     </body>
