@@ -1,6 +1,7 @@
 let units = 'metric';   
 const apiId = '8d1e9284c9373751f4e24ac5eb9993ce';
 const cityInput = document.forms['city'];
+const moment = require('moment');
 
 cityInput.addEventListener('submit', getWeatherByCityName);
 
@@ -33,3 +34,12 @@ function getWeatherByCityName(e) {
             }
         })
 }
+
+const data = new Date();
+const data2 = moment(data).format('MMMM Do YYYY, h:mm:ss a');
+document.querySelector('.top').innerHTML = `<h3>${data2}</h3>`;
+
+setInterval(() => {
+    const data = new Date();
+    const data2 = moment(data).format('MMMM Do YYYY, h:mm:ss a');
+    document.querySelector('.top').innerHTML = `<h3>${data2}</h3>`},1000);
