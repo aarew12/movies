@@ -21,6 +21,9 @@ function getWeatherByCityName(e) {
         })            
         .then(resp => {
             console.log(resp);  
+            const sunrise = new Date(resp.sys.sunrise * 1000);
+            const sunset = new Date(resp.sys.sunset * 1000);
+
             document.querySelector('.weatherinfo').innerHTML = 
             `<h3>${resp.name}, ${resp.main.temp.toFixed()} °C</h3>
             <p>${resp.weather[0].description}</p>
@@ -29,7 +32,9 @@ function getWeatherByCityName(e) {
                 <li>wilgotność: ${resp.main.humidity} %</li>
                 <li>prędkość wiatru: ${resp.wind.speed} m/s</li>
                 <li>kierunek wiatru: ${resp.wind.deg} °</li>
-                <li>kierunek wiatru: ${resp.wind.deg} °</li>
+                <li>wschód słońca: ${sunrise.getHours()}:${sunrise.getMinutes()}:${sunrise.getSeconds()}</li>
+                <li>zachód słońca: ${sunset.getHours()}:${sunset.getMinutes()}:${sunset.getSeconds()}</li>
+                
             </ul>`;
         })
         .catch(error => {
