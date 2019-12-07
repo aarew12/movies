@@ -59,7 +59,7 @@ function getfilm() {
     console.log(pogoda);
     let genre = 0;
 
-    if(pogoda=='bezchmurnie'){
+    if(pogoda=='rozproszone chmury'){
         if(humor=='wspanialy'){genre = 14} //fantasy
         if(humor=='znudzony'){genre = 12} //adventure
         if(humor=='smutny'){genre = 80} //crime
@@ -74,13 +74,25 @@ function getfilm() {
         if(humor=='romantyczny'){genre = 10752} //war
     }
     else if(pogoda=='deszcz'){
-        genre=0
+        if(humor=='wspanialy'){genre = 12} //adventure
+        if(humor=='znudzony'){genre = 28} //action
+        if(humor=='smutny'){genre = 10752} //war
+        if(humor=='zabawny'){genre = 35} //comedy
+        if(humor=='romantyczny'){genre = 10749} //romance
     }
     else if(pogoda=='snieg'){
-        genre=0
+        if(humor=='wspanialy'){genre = 14} //fantasy
+        if(humor=='znudzony'){genre = 37} //western
+        if(humor=='smutny'){genre = 9648} //mystery
+        if(humor=='zabawny'){genre = 35} //comedy
+        if(humor=='romantyczny'){genre = 10749} //romance
     }
     else if(pogoda=='burza'){
-        genre=0
+        if(humor=='wspanialy'){genre = 878} //scifi
+        if(humor=='znudzony'){genre = 27} //horror
+        if(humor=='smutny'){genre = 9648} //mystery
+        if(humor=='zabawny'){genre = 18} //drama
+        if(humor=='romantyczny'){genre = 10749} //romance
     }
 
    
